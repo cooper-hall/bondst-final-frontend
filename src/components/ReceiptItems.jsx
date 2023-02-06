@@ -12,6 +12,12 @@ const ReceiptItems = ({receiptItemsList, setReceiptItemsList, setTotal, total}) 
     setReceiptItemsList()
   }
 
+  // const grandTotal = () => {
+  //   grab all the items in receiptItemsList
+  //   grab price of each item and add that to the current total
+
+  // }
+
 
   const handleVoid = (receiptItem) => {
     // let selectedItem = ([...receiptItemsList.filter()])
@@ -46,7 +52,7 @@ const ReceiptItems = ({receiptItemsList, setReceiptItemsList, setTotal, total}) 
       <div className="receipt-item-container">
       <ul className="receipt-item-list" >
         {
-          receiptItemsList.map((item)=> {
+          receiptItemsList && receiptItemsList.map((item)=> {
             return(
               <>
               <li className="receipt-items-listitem">

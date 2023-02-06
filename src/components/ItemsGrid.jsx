@@ -8,13 +8,6 @@ const ItemsGrid = ({receiptItemsList, setReceiptItemsList, total, setTotal, addT
 
   const categories = ["Gin", "Whiskey", "Vodka"]
 
-  // const grandTotal = () => {
-  //   let total = 0
-  //   receiptItemList.map(item => total+= item.price)
-  //       setTotal(total)
-  //   }
-
-
   return (
     <div className="items-container">
       <div className="tryout">
