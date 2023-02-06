@@ -13,12 +13,12 @@ const ReceiptItems = ({receiptItemsList, setReceiptItemsList, setTotal, total}) 
   }
 
 
-  // const handleVoid = (receiptItem) => {
-  //   // let selectedItem = ([...receiptItemsList.filter()])
-  //   setReceiptItemsList([...receiptItemsList.filter((item) => { return item.id !== receiptItem.id })])
-  //   setTotal([...receiptItemsList.filter((item)=> {return item.price !== receiptItem.price})])
-  //   console.log("this item has been voided")
-  // }
+  const handleVoid = (receiptItem) => {
+    // let selectedItem = ([...receiptItemsList.filter()])
+    setReceiptItemsList([...receiptItemsList.filter((item) => { return item.id !== receiptItem.id })])
+    // setTotal([...receiptItemsList.filter((item)=> {return item.price !== receiptItem.price})])
+    console.log("this item has been voided")
+  }
     
   const createNewTicket = async() => {
     let req = await fetch('http://localhost:4000/ticket', {
@@ -44,13 +44,12 @@ const ReceiptItems = ({receiptItemsList, setReceiptItemsList, setTotal, total}) 
       <div className="parent-receipt-item-container">
         <div className="new-ticket" onClick= {createNewTicket}>New Ticket</div>
       <div className="receipt-item-container">
-      {/* <ul className="receipt-item-list" >
+      <ul className="receipt-item-list" >
         {
           receiptItemsList.map((item)=> {
             return(
               <>
               <li className="receipt-items-listitem">
-                <p>quantity</p>
                 <p>{item.name}</p>
                 <p>{item.price}</p>
                 <p onClick= {() => {handleVoid(item)}}> X </p>
@@ -59,7 +58,7 @@ const ReceiptItems = ({receiptItemsList, setReceiptItemsList, setTotal, total}) 
             )
           })
         }
-      </ul> */}
+      </ul>
       </div>
       <div className="bill-total-div">Bill Total $ {total} </div>
     </div>

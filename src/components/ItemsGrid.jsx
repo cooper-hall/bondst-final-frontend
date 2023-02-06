@@ -4,15 +4,15 @@ import PaymentOptions from "./PaymentOptions"
 import Quantities from "./Quantities"
 
 
-const ItemsGrid = ({receiptItemsList, setReceiptItemsList, total, setTotal, addToTotal}) => {
+const ItemsGrid = ({receiptItemsList, setReceiptItemsList, total, setTotal, addToTotal, updateTicketList}) => {
 
   const categories = ["Gin", "Whiskey", "Vodka"]
 
-  const grandTotal = () => {
-    let total = 0
-    receiptItemList.map(item => total+= item.price)
-        setTotal(total)
-    }
+  // const grandTotal = () => {
+  //   let total = 0
+  //   receiptItemList.map(item => total+= item.price)
+  //       setTotal(total)
+  //   }
 
 
   return (
@@ -29,7 +29,7 @@ const ItemsGrid = ({receiptItemsList, setReceiptItemsList, total, setTotal, addT
           })
         }
         </div>
-        < AlcTypes />
+        < AlcTypes updateTicketList={updateTicketList} addToTotal={addToTotal}/>
         <div className="tryout">
         {
           categories.map((category)=> {
@@ -42,7 +42,7 @@ const ItemsGrid = ({receiptItemsList, setReceiptItemsList, total, setTotal, addT
           })
         }
       </div>
-      < Cocktails receiptItemsList={receiptItemsList} setReceiptItemsList={setReceiptItemsList} addToTotal={addToTotal}/>
+      < Cocktails receiptItemsList={receiptItemsList} setReceiptItemsList={setReceiptItemsList} addToTotal={addToTotal} updateTicketList={updateTicketList}/>
       < PaymentOptions receiptItemsList={receiptItemsList} setReceiptItemsList={setReceiptItemsList} setTotal={setTotal}/>
       <div className="quantity-bar">QUANTITY</div>
       < Quantities />

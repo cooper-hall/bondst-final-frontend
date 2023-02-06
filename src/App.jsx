@@ -11,7 +11,7 @@ function App() {
   const [currentTicket, setCurrentTicket] = useState([])
   
   const addToTotal = (price) => {
-    console.log(price)
+    // console.log(price)
     console.log(total)
     setTotal(total + price)
   }
@@ -24,7 +24,7 @@ function App() {
 
     <div className="main-page-container">
       <ReceiptItems receiptItemsList={receiptItemsList} setReceiptItemsList={setReceiptItemsList} total={total} setTotal={setTotal}/>  
-      <ItemsGrid receiptItemsList={receiptItemsList} setReceiptItemsList={setReceiptItemsList} total={total} setTotal={setTotal} addToTotal={addToTotal}/>
+      <ItemsGrid receiptItemsList={receiptItemsList} setReceiptItemsList={setReceiptItemsList} total={total} setTotal={setTotal} addToTotal={addToTotal} updateTicketList={updateTicketList}/>
     </div>
   )
 }
