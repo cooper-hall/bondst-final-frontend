@@ -15,7 +15,7 @@ const Cocktails = ({receiptItemsList, setReceiptItemsList, addToTotal}) => {
     request()
   }, [])
   
-  const addToList= (cocktail) => {
+  const addToTicket= (cocktail) => {
     console.log("added!")
     console.log(cocktail)
     setReceiptItemsList(prevState=> [...prevState, cocktail])
@@ -54,7 +54,7 @@ const Cocktails = ({receiptItemsList, setReceiptItemsList, addToTotal}) => {
             const divcolor = cocktail.type === "Classic" ? "#cccccc" : cocktail.type === "Special" ? "#8F00FF" : cocktail.type === "Other" ? "#ffff00": "#fff";
             return (
               <div className="all-cocktails" 
-                  onClick={()=> {createNewItem && addToList(cocktail)}}
+                  onClick={()=> {addToTicket(cocktail)}}
                   style={{backgroundColor: divcolor}}
               >
                 {cocktail.name} 
