@@ -11,9 +11,9 @@ function App() {
   const [currentTicket, setCurrentTicket] = useState([])
   
   const addToTotal = (price) => {
-    // console.log(price)
+    console.log(price)
     console.log(total)
-    setTotal(total + price)
+    setTotal((total) => total + price)
   }
 
   const updateTicketList= (cocktail) => {
