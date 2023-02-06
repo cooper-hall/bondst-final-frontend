@@ -1,14 +1,36 @@
 
 
-const PaymentOptions = ({receiptItemsList, setReceiptItemsList, setTotal}) => {
+const PaymentOptions = ({receiptItemsList, setReceiptItemsList, setTotal, total}) => {
 
-  // create a click event for each of these!!!
-const handlePay = () => {
-    //this will be a patch to set the receipt from active to inactive
-    setReceiptItemsList([])
+  const clearTicket=()=>{
     setTotal(0)
+  }
+
+  const clearTotal=()=>{
+    setReceiptItemsList([])
+  }
+
+
+const handlePay = async() => {
+    let req = await fetch('http://localhost:4000/ticket', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        'sum': total,
+        'active': 1,
+        'items': receiptItemsList
+      })
+    })
+    let res = await req.json()
+    if (req.ok){
+      clearTicket()
+      clearTotal()
+    }  
     console.log("you have completed the transaction")
   }
+
 const handleVoid = (receiptItem) => {
     setReceiptItemsList([...receiptItemsList.filter((item) => { return item.id !== receiptItem.id })])
     console.log("this item has been voided")
