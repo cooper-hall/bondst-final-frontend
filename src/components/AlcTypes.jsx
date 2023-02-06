@@ -9,7 +9,7 @@ const AlcTypes = () => {
 
   useEffect(() => {
     const request = async () => {
-      let req = await fetch('http://localhost:3000/brands')
+      let req = await fetch('http://localhost:4000/bottles')
       let res = await req.json()
       setBrands(res)
     }

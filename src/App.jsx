@@ -17,7 +17,7 @@ function App() {
   }
 
   const updateTicketList= (cocktail) => {
-    setReceiptItemsList(prevState=> [...prevState, cocktail])
+   setReceiptItemsList(prevState=> [...prevState, cocktail])
   }
 
   return (
