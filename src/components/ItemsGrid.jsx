@@ -4,7 +4,7 @@ import PaymentOptions from "./PaymentOptions"
 import Quantities from "./Quantities"
 
 
-const ItemsGrid = ({receiptItemsList, setReceiptItemsList, selectedItem, setSelectedItem, total, setTotal, addToTotal}) => {
+const ItemsGrid = ({receiptItemsList, setReceiptItemsList, total, setTotal, addToTotal}) => {
 
   const categories = ["Gin", "Whiskey", "Vodka"]
 
@@ -42,7 +42,7 @@ const ItemsGrid = ({receiptItemsList, setReceiptItemsList, selectedItem, setSele
           })
         }
       </div>
-      < Cocktails receiptItemsList={receiptItemsList} setReceiptItemsList={setReceiptItemsList} selectedItem={selectedItem} setSelectedItem={setSelectedItem} addToTotal={addToTotal}/>
+      < Cocktails receiptItemsList={receiptItemsList} setReceiptItemsList={setReceiptItemsList} addToTotal={addToTotal}/>
       < PaymentOptions receiptItemsList={receiptItemsList} setReceiptItemsList={setReceiptItemsList} setTotal={setTotal}/>
       <div className="quantity-bar">QUANTITY</div>
       < Quantities />

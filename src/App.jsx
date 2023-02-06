@@ -7,7 +7,6 @@ import ReceiptItems from './components/ReceiptItems'
 function App() {
   
   const [receiptItemsList, setReceiptItemsList] = useState([])
-  const [selectedItem, setSelectedItem] = useState([])
   const [total, setTotal] = useState(0)
   const [currentTicket, setCurrentTicket] = useState([])
   
@@ -17,13 +16,15 @@ function App() {
     setTotal(total + price)
   }
 
- 
+  const updateTicketList= (cocktail) => {
+    setReceiptItemsList(prevState=> [...prevState, cocktail])
+  }
 
   return (
 
     <div className="main-page-container">
-      <ReceiptItems receiptItemsList={receiptItemsList} setReceiptItemsList={setReceiptItemsList} selectedItem={selectedItem} setSelectedItem={setSelectedItem} total={total} setTotal={setTotal}/>  
-      <ItemsGrid receiptItemsList={receiptItemsList} setReceiptItemsList={setReceiptItemsList} selectedItem={selectedItem} setSelectedItem={setSelectedItem} total={total} setTotal={setTotal} addToTotal={addToTotal}/>
+      <ReceiptItems receiptItemsList={receiptItemsList} setReceiptItemsList={setReceiptItemsList} total={total} setTotal={setTotal}/>  
+      <ItemsGrid receiptItemsList={receiptItemsList} setReceiptItemsList={setReceiptItemsList} total={total} setTotal={setTotal} addToTotal={addToTotal}/>
     </div>
   )
 }

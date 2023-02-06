@@ -1,7 +1,7 @@
 import {useState} from 'react'
 
 
-const ReceiptItems = ({receiptItemsList, setReceiptItemsList, selectedItem, setSelectedItem, setTotal, total}) => {
+const ReceiptItems = ({receiptItemsList, setReceiptItemsList, setTotal, total}) => {
 
 
   const clearTicket=()=>{
@@ -11,6 +11,7 @@ const ReceiptItems = ({receiptItemsList, setReceiptItemsList, selectedItem, setS
   const clearTotal=()=>{
     setReceiptItemsList()
   }
+
 
   // const handleVoid = (receiptItem) => {
   //   // let selectedItem = ([...receiptItemsList.filter()])
@@ -28,7 +29,7 @@ const ReceiptItems = ({receiptItemsList, setReceiptItemsList, selectedItem, setS
       body: JSON.stringify({
         'sum': total,
         'active': 1,
-        'receipt_items': receiptItemsList
+        'items': receiptItemsList
       })
     })
     let res = await req.json()

@@ -23,7 +23,7 @@ const handleCancel = () => {
     <div className="payment-container">
       <div className="pay-content" onClick={()=>{handlePay()}}>PAY</div>
       <div className="void-content" onClick={()=>{handleVoid()}}>VOID</div>
-      <div className="trans-cancel-content" onClick={()=>{handleCancel()}}>TRANS CANCEL</div>
+      <div className="trans-cancel-content" onClick={()=>{handleCancel()}}>CANCEL</div>
     </div>
   )
 }
