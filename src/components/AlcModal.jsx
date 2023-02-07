@@ -1,20 +1,34 @@
 import {useState} from 'react'
 
-const AlcModal = ({setShowAlcModal, brands}) => {
-  console.log(brands)
+const AlcModal = ({setShowAlcModal, brands, updateTicketList, addToTotal, currentBottle}) => {
+
+    const addBrandToOrder = (bottle) => {
+        // updateTicketList(cocktail)
+        // addToTotal(cocktail.price)
+        console.log(bottle)
+    }
+    
+
+
    return (
     // onClick={() => setShowAlcModal(false)} --possibly add to parent div to allow click out of modal anywhere on screen
         <div className="alc-modal-container" > 
             <div className="alc-modal-content">
                 <div className="exit-button" onClick={() => setShowAlcModal(false)}>X</div>
-                <h2 className="alc-modal-brand"> How to serve: {brands.name}</h2>
-                {/* <form type="submit" className="alc-modal-form" onSubmit={handleSubmit}> */}
-                  {/* <input > + classic cocktail </input> <br/>
-                  <input > + house cocktail </input><br/>
-                  <input > + other drink </input><br/>
-                  <input > + straight </input><br/>
-                  <submit>Cont.</submit> */}
-                {/* </form> */}
+                <div className="alc-modal-brand"> How to serve: {currentBottle.name} ${currentBottle.price}</div>
+                    <h4 className="alc-modal-option"> + house cocktail </h4>
+                    <h4 className="alc-modal-option"> + classic cocktail </h4>
+                    <h4 className="alc-modal-option"> + other drink </h4>
+                    <h4 className="alc-modal-option"> + straight </h4>
+                    <h4 className="alc-modal-option" onClick={()=>{addBrandToOrder(currentBottle)}}>submit</h4>
+
+
+                    {/* if house cocktail is selected, add $13 dollars to the currentBottle price
+                        else classic cocktail is selected, add $9 dollars to the currentBottle price
+                        else other drink is selected, add $5 dollars to the currentBottle price
+                        else straight is selected, add $0 dollars to the currentBottle price
+                        */}
+
             </div>
         </div>
     )

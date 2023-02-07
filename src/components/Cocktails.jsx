@@ -48,7 +48,7 @@ const Cocktails = ({receiptItemsList, setReceiptItemsList, addToTotal, updateTic
       <div className="all-cocktails-container">
         {
           cocktails.map((cocktail)=> {
-            const divcolor = cocktail.type === "Classic" ? "#cccccc" : cocktail.type === "Special" ? "#8F00FF" : cocktail.type === "Other" ? "#ffff00": "#fff";
+            const divcolor = cocktail.drinkType === "Classic" ? "#cccccc" : cocktail.drinkType === "Special" ? "#8F00FF" : cocktail.drinkType === "Other" ? "#ffff00": "#fff";
             return (
               <div className="all-cocktails" 
                   onClick={()=> {createNewItem && addCocktailToOrder(cocktail)}}
