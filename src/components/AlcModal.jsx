@@ -7,6 +7,16 @@ const AlcModal = ({setShowAlcModal, brands, updateTicketList, addToTotal, curren
         // addToTotal(cocktail.price)
         console.log(bottle)
     }
+
+    // const updatePrice = (currentBottle) => {
+    //     if id === opt1 then currentBottle.price + 13;
+    //     else
+    //         id === opt2 then currentBottle.price + 9;
+    //     else 
+    //         id === opt3 then currentBottle.price + 5;
+    //     else
+    //         id === opt4 then currentBottle.price + 0
+    // }
     
 
 
