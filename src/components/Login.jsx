@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import {useNavigate, Link } from "react-router-dom"
+import {useNavigate } from "react-router-dom"
 import Cookies from 'js-cookie'
 
 function Login({user, setUser, form}) {
@@ -15,7 +15,7 @@ function Login({user, setUser, form}) {
 
   useEffect(()=> {
     const loadUser = async() => {
-      let req = await fetch("http://localhost:4000/me", {
+      let req = await fetch('http://localhost:4000/which_employee', {
         headers:{Authorization: Cookies.get('token')}
       })
       let res = await req.json()
@@ -26,10 +26,17 @@ function Login({user, setUser, form}) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    let formData = new FormData(form.current)
-    let req = await fetch ("http://localhost:4000/employee_login",{
+    // let formData = new FormData(form.current)
+    let req = await fetch("http://localhost:4000/employee_login",{
       method: "POST",
-      body: formData
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        username: e.target.username.value,
+        password: e.target.password.value
+      })
       })
     let res = await req.json()
     if (req.ok) {
@@ -39,7 +46,6 @@ function Login({user, setUser, form}) {
       navigate('/mainpage')
     } else {
       console.log("login failed, bruh")
-      console.log("")
       setNoUser("Employee Not Found")
       removeError()
     }
@@ -50,11 +56,11 @@ function Login({user, setUser, form}) {
     <div className="Login">
       <h1>BONDST</h1>
       <div className="login-content">
-      <form onSubmit={handleSubmit} ref={form} className="login-form">
+      <form onSubmit={handleSubmit} className="login-form">
         <h2>Employee Login:</h2>
-        <input placeholder="Enter username..." type='username' name='username'/>
+        <input placeholder="Enter username..." type='text' name='username'/>
         <br/>
-        <input placeholder="Enter password..."type='password' name='password'/>
+        <input placeholder="Enter password..." type='password' name='password'/>
         <div> {noUser}</div>
         <br/>
         <input type="submit" value="Login"/>

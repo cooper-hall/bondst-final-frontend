@@ -27,10 +27,10 @@ const Cocktails = ({receiptItemsList, setReceiptItemsList, addToTotal, updateTic
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        // 'price': self.price,
-        // 'ounces': self.ounces,
-        // 'name': self.name,
-        // 'ticket_id': self.ticket_id
+        price: price,
+        ounces: ounces,
+        name: name,
+        ticket_id: ticket_id
       })
     })
     let res = await req.json()
