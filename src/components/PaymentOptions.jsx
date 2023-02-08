@@ -19,7 +19,6 @@ const handlePay = async() => {
       },
       body: JSON.stringify({
         'sum': total,
-        'active': 1,
         'items': receiptItemsList
       })
     })
