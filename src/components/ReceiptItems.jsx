@@ -1,7 +1,8 @@
 import {useState} from 'react'
+import LogOut from "./LogOut"
 
 
-const ReceiptItems = ({receiptItemsList, setReceiptItemsList, setTotal, total}) => {
+const ReceiptItems = ({receiptItemsList, setReceiptItemsList, setTotal, total, user, setUser}) => {
 
   const handleVoid = (receiptItem) => {
     // let selectedItem = ([...receiptItemsList.filter()])
@@ -12,7 +13,7 @@ const ReceiptItems = ({receiptItemsList, setReceiptItemsList, setTotal, total}) 
 
     return(
       <div className="parent-receipt-item-container">
-        {/* <div className="new-ticket" onClick= {createNewTicket}>New Ticket</div> */}
+        < LogOut user={user} setUser={setUser}/>
       <div className="receipt-item-container">
       <ul className="receipt-item-list" >
         {
