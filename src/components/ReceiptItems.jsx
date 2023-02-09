@@ -4,10 +4,12 @@ import LogOut from "./LogOut"
 
 const ReceiptItems = ({receiptItemsList, setReceiptItemsList, setTotal, total, user, setUser}) => {
 
+  const subtractFromTotal = (receiptItem) => {
+    
+  }
+
   const handleVoid = (receiptItem) => {
-    // let selectedItem = ([...receiptItemsList.filter()])
-    setReceiptItemsList([...receiptItemsList.filter((item) => { return item.id !== receiptItem.id })])
-    // setTotal([...receiptItemsList.filter((item)=> {return item.price !== receiptItem.price})])
+    setReceiptItemsList([...receiptItemsList.filter((item) => { return item.id !== receiptItem.id })])  
     console.log("this item has been voided")
   }
 
@@ -20,7 +22,7 @@ const ReceiptItems = ({receiptItemsList, setReceiptItemsList, setTotal, total, u
           receiptItemsList && receiptItemsList.map((item)=> {
             return(
               <>
-              <li className="receipt-items-listitem">
+              <li className="receipt-items-listitem" key={item.toString()} value={item.toString()}>
                 <p>{item.name}</p>
                 <p>{item.price}</p>
                 <p onClick= {() => {handleVoid(item)}}> X </p>

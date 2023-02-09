@@ -1,6 +1,7 @@
 import ItemsGrid from './ItemsGrid'
 import ReceiptItems from './ReceiptItems'
 import {useState} from 'react'
+import {v4 as uuidv4} from 'uuid'
 
 const MainPage = ({user, setUser}) => {
 
@@ -14,8 +15,10 @@ const MainPage = ({user, setUser}) => {
     setTotal((total) => total + price)
   }
 
+  const newId = 1
+
   const updateTicketList= (drink) => {
-   setReceiptItemsList(prevState=> [...prevState, drink])
+   setReceiptItemsList(prevState=> [...prevState, {...drink, id: uuidv4()}])
   }
 
   return (
