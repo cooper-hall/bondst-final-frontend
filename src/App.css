@@ -99,7 +99,7 @@ body{
 }
 .pay-content{
   display: flex;
-  width: 33%;
+  width: inherit;
   background: green;
   border: 3px solid purple;
   justify-content: center;
@@ -122,8 +122,8 @@ body{
 }
 .trans-cancel-content{
   display: flex;
-  width: 33%;
-  background: darkslategrey;
+  width: inherit;
+  background: red;
   border: 3px solid purple;
   color: white;
   font-size: 200%;

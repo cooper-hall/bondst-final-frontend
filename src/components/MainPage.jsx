@@ -10,12 +10,8 @@ const MainPage = ({user, setUser}) => {
   
   
   const addToTotal = (price) => {
-    console.log(price)
-    console.log(total)
     setTotal((total) => total + price)
   }
-
-  const newId = 1
 
   const updateTicketList= (drink) => {
    setReceiptItemsList(prevState=> [...prevState, {...drink, id: uuidv4()}])
