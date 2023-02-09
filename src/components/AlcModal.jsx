@@ -3,25 +3,33 @@ import {useState} from 'react'
 const AlcModal = ({setShowAlcModal, updateTicketList, addToTotal, currentBottle, setCurrentBottle}) => {
 
     const [selectedOption, setSelectedOption] = useState(null)
-    const [price, setPrice] = useState(currentBottle.price)
+    const [price, setPrice] = useState([])
 
     const updatePrice = (newOption) => {
-        if (newOption === 'opt1') {
-          setPrice(currentBottle.price + 13);
-        } else if (newOption === 'opt2') {
-          setPrice(currentBottle.price + 9);
-        } else if (newOption === 'opt3') {
-          setPrice(currentBottle.price + 5);
-        } else if (newOption === 'opt4') {
-          setPrice(currentBottle.price);
+        let bottlePrice = currentBottle.price
+        switch(newOption) {
+            case 'opt1':
+                setPrice(bottlePrice + 13)
+                break;
+            case 'opt2':
+                setPrice(bottlePrice + 9)
+                break;
+            case 'opt3':
+                setPrice(bottlePrice + 5)
+                break;
+            case 'opt4':
+                setPrice(bottlePrice + 0)
+                break;
+            default:
+            break
         }
-        setSelectedOption(newOption);
-    };
+    }
 
      const addBrandToOrder = (bottle) => {
         updateTicketList(bottle)
         addToTotal(price)
         setShowAlcModal(false)
+        updatePrice(bottle.price)
     }
 
    return (
