@@ -4,13 +4,23 @@ import LogOut from "./LogOut"
 
 const ReceiptItems = ({receiptItemsList, setReceiptItemsList, setTotal, total, user, setUser}) => {
 
-  const subtractFromTotal = (receiptItem) => {
-    
+  const subtractFromTotal = (price) => {
+    setTotal((total) => total - price)
   }
 
   const handleVoid = (receiptItem) => {
-    setReceiptItemsList([...receiptItemsList.filter((item) => { return item.id !== receiptItem.id })])  
+    setReceiptItemsList([...receiptItemsList.filter((item) => { return item.id !== receiptItem.id})]) 
+    subtractFromTotal(receiptItem.price) 
     console.log("this item has been voided")
+  }
+
+  const addQuantity = (receiptItem) => {
+    //  setReceiptItemsList([...receiptItemsList.filter((item) => { return item.id === receiptItem.id})])
+     console.log(receiptItem)
+    //first need to select an item
+    // grab that items price
+    // then multiply that by the clicked quantity 
+    // setTotal((total)=> total )
   }
 
     return(
@@ -23,6 +33,7 @@ const ReceiptItems = ({receiptItemsList, setReceiptItemsList, setTotal, total, u
             return(
               <>
               <li className="receipt-items-listitem" key={item.toString()} value={item.toString()}>
+                <p onClick ={()=> {addQuantity(item)}}> + </p>
                 <p>{item.name}</p>
                 <p>{item.price}</p>
                 <p onClick= {() => {handleVoid(item)}}> X </p>
