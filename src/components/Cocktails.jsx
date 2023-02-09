@@ -14,10 +14,18 @@ const Cocktails = ({receiptItemsList, setReceiptItemsList, addToTotal, updateTic
     }
     request()
   }, [])
+
+  const leDrink = {
+    ticket_id : self.ticket_id,
+    name: self.name,
+    price: self.price,
+  }
   
   const addCocktailToOrder = (cocktail) => {
+    console.log(cocktail)
     updateTicketList(cocktail)
     addToTotal(cocktail.price)
+    // createNewItem(leDrink)
  }
 
   const createNewItem = async() => {
@@ -27,10 +35,10 @@ const Cocktails = ({receiptItemsList, setReceiptItemsList, addToTotal, updateTic
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        price: price,
-        ounces: ounces,
-        name: name,
-        ticket_id: ticket_id
+        // 'ticket_id': ticket_id,
+        // 'name': name,
+        // 'price': price
+        // quantity: quantity,
       })
     })
     let res = await req.json()

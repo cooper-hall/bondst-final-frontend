@@ -12,7 +12,6 @@ const LogOut = ({user, setUser}) => {
   }
   return(
     <div className="logout">  
-      Hello,{user}
       <div className="logout-btn">
       <button onClick={logOut} >Log Out</button>
       </div>
