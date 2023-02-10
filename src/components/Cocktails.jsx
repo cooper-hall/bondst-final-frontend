@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 
 
-const Cocktails = ({receiptItemsList, setReceiptItemsList, addToTotal, updateTicketList}) => {
+const Cocktails = ({receiptItemsList, setReceiptItemsList, addToTotal, updateTicketList, total}) => {
   
 
   const [cocktails, setCocktails] = useState([])
@@ -14,41 +14,14 @@ const Cocktails = ({receiptItemsList, setReceiptItemsList, addToTotal, updateTic
     }
     request()
   }, [])
-
-  const leDrink = {
-    ticket_id : self.ticket_id,
-    name: self.name,
-    price: self.price,
-  }
   
-  const addCocktailToOrder = (cocktail) => {
+
+const addCocktailToOrder = (cocktail) => {
     console.log(cocktail)
     updateTicketList(cocktail)
     addToTotal(cocktail.price)
-    // createNewItem(leDrink)
+    console.log(total)
  }
-
-  const createNewItem = async() => {
-    let req = await fetch('http://localhost:4000/create_receipt_item', {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        // 'ticket_id': ticket_id,
-        // 'name': name,
-        // 'price': price
-        // quantity: quantity,
-      })
-    })
-    let res = await req.json()
-    if (req.ok){
-      console.log("new receipt-item created") 
-  } else{
-    console.log("did not work")
-  }
-
-}
 
 
   return (
@@ -59,7 +32,7 @@ const Cocktails = ({receiptItemsList, setReceiptItemsList, addToTotal, updateTic
             const divcolor = cocktail.drinkType === "Classic" ? "#cccccc" : cocktail.drinkType === "Special" ? "#8F00FF" : cocktail.drinkType === "Other" ? "#ffff00": "#fff";
             return (
               <div className="all-cocktails" 
-                  onClick={()=> {createNewItem && addCocktailToOrder(cocktail)}}
+                  onClick={()=> {addCocktailToOrder(cocktail)}}
                   style={{backgroundColor: divcolor}}
               >
                 {cocktail.name} 

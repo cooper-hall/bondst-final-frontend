@@ -25,8 +25,9 @@ const AlcModal = ({setShowAlcModal, updateTicketList, addToTotal, currentBottle,
         }
     }
 
+    
     const addBrandToOrder = (bottle) => {
-      let updatedBottle = { ...bottle, price: price };
+        let updatedBottle = { ...bottle, price: price };
         setCurrentBottle(updatedBottle);
         updateTicketList(updatedBottle);
         addToTotal(price);
