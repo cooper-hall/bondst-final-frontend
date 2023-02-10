@@ -8,17 +8,16 @@ const MainPage = ({user, setUser}) => {
   const [receiptItemsList, setReceiptItemsList] = useState([])
   const [total, setTotal] = useState(0)
   
-  
+
   const addToTotal = (price) => {
     setTotal((total) => total + price)
   }
 
   const updateTicketList= (drink) => {
-   setReceiptItemsList(prevState=> [...prevState, {...drink, id: uuidv4()}])
+   setReceiptItemsList(prevState=> [...prevState, {...drink, ounces: 2, quantity: 1, id: uuidv4()}])
   }
 
   return (
-
     <div className="main-page-container">
       <ReceiptItems receiptItemsList={receiptItemsList} setReceiptItemsList={setReceiptItemsList} total={total} setTotal={setTotal} user={user} setUser={setUser}/>  
       <ItemsGrid receiptItemsList={receiptItemsList} setReceiptItemsList={setReceiptItemsList} total={total} setTotal={setTotal} addToTotal={addToTotal} updateTicketList={updateTicketList}/>

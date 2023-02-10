@@ -30,10 +30,6 @@ const handlePay = async() => {
     console.log("you have completed the transaction")
   }
 
-const handleVoid = (receiptItem) => {
-    setReceiptItemsList([...receiptItemsList.filter((item) => { return item.id !== receiptItem.id })])
-    console.log("this item has been voided")
-  }
 const handleCancel = () => {
     setReceiptItemsList([])
     setTotal(0)
@@ -43,7 +39,6 @@ const handleCancel = () => {
   return(
     <div className="payment-container">
       <div className="pay-content" onClick={()=>{handlePay()}}>PAY</div>
-      {/* <div className="void-content" onClick={()=>{handleVoid()}}>VOID</div> */}
       <div className="trans-cancel-content" onClick={()=>{handleCancel()}}>CANCEL</div>
     </div>
   )

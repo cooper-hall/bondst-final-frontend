@@ -4,35 +4,57 @@ import LogOut from "./LogOut"
 
 const ReceiptItems = ({receiptItemsList, setReceiptItemsList, setTotal, total, user, setUser}) => {
 
-  const [quantity, setQuantity] = useState(1)
-
   const subtractFromTotal = (price) => {
     setTotal((total) => total - price)
   }
 
   const handleVoid = (receiptItem) => {
     setReceiptItemsList([...receiptItemsList.filter((item) => { return item.id !== receiptItem.id})]) 
-    subtractFromTotal(receiptItem.price)
-    // decreaseQuantity(receiptItem)
-    // setQuantity(1)
-    // if receiptItem is Voided then subract all of it's quantities and
+    subtractFromTotal(receiptItem.price * receiptItem.quantity)
     console.log("this item has been voided")
   }
 
-  const addQuantity = (item) => {
-    // setQuantity(quantity + 1)
+ const addQuantity = (item) => {
+    setReceiptItemsList(receiptItemsList.map((selectedItem) => {
+      if (selectedItem.id === item.id) {
+        selectedItem.quantity += 1}
+      return selectedItem}))
     setTotal((total) => total + item.price)
-    console.log(total)
+  }
+
+  const addOunce = (item) => {
+    setReceiptItemsList(receiptItemsList.map((selectedItem) => {
+      if (selectedItem.id === item.id) {
+        selectedItem.ounces += 2}
+      return selectedItem}))
   }
   
-  const decreaseQuantity = (item) => {
-    // setQuantity(quantity - 1)
-    total - item.price > 0 ? setTotal((total) => total - item.price) : handleVoid(item)
+ const decreaseQuantity = (item) => {
+    setReceiptItemsList(receiptItemsList.map((selectedItem) => {
+      if (selectedItem.id === item.id) {
+        selectedItem.quantity -= 1}
+      return selectedItem}))
+    setTotal((total) => total - item.price)
+    total - item.price <= 0 ? handleVoid(item) : ''
+ }
+
+ const decreaseOunce = (item) => {
+    setReceiptItemsList(receiptItemsList.map((selectedItem) => {
+      if (selectedItem.id === item.id) {
+        selectedItem.ounces -= 2}
+      return selectedItem}))
+      item.ounces <= 0 ? handleVoid(item) : ''
   }
 
+ const addQuantAndOz = (item) => {
+  addQuantity(item)
+  addOunce(item)
+ }
 
-
-
+ const subtractQuantAndOz = (item) => {
+  decreaseQuantity(item)
+  decreaseOunce(item)
+ }
 
     return(
       <div className="parent-receipt-item-container">
@@ -43,13 +65,13 @@ const ReceiptItems = ({receiptItemsList, setReceiptItemsList, setTotal, total, u
           receiptItemsList && receiptItemsList.map((item)=> {
             return(
               <>
-              <li className="receipt-items-listitem" key={item.toString()} value={item.toString()}>
-                <p onClick ={()=> {addQuantity(item)}} > + </p>
-                <p onClick ={()=> {decreaseQuantity(item)}} > - </p>
-                <p> {quantity} </p>
+              <li className="receipt-items-listitem">
+                <p onClick ={()=> {addQuantAndOz(item)}} className="add-quant"> + </p>
+                <p onClick ={()=> {subtractQuantAndOz(item)}} className="sub-quant"> - </p>
+                <p>{item.quantity}</p>
                 <p>{item.name}</p>
                 <p>{item.price}</p>
-                <p onClick= {() => {handleVoid(item)}}> X </p>
+                <p onClick= {() => {handleVoid(item)}} className="void-item"> X </p>
               </li> 
               <br/></>
             )
@@ -64,3 +86,4 @@ const ReceiptItems = ({receiptItemsList, setReceiptItemsList, setTotal, total, u
 }
 
 export default ReceiptItems
+
