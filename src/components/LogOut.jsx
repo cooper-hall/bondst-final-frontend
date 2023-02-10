@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom'
 
 const LogOut = ({user, setUser}) => {
 
-  const navigate= useNavigate
+  const navigate= useNavigate()
 
   const logOut = () => {
     Cookies.remove('token')
