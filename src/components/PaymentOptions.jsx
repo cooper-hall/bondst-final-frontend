@@ -1,6 +1,5 @@
 
-
-const PaymentOptions = ({receiptItemsList, setReceiptItemsList, setTotal, total}) => {
+const PaymentOptions = ({receiptItemsList, setReceiptItemsList, setTotal, total, bottle, brands, setBrands}) => {
 
   const clearTicket=()=>{
     setTotal(0)
@@ -10,6 +9,20 @@ const PaymentOptions = ({receiptItemsList, setReceiptItemsList, setTotal, total}
     setReceiptItemsList([])
   }
 
+const updateBottle = async(receiptItem) => {
+  if (receiptItem.bottle_id > 0) {
+  let req = await fetch (`http://localhost:4000/update_bottle/${receiptItem.bottle_id}`,{
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify({
+      ounces: receiptItem.ounces
+    })
+  })
+ let res = await req.json()
+}}
 
 const handlePay = async() => {
     let req = await fetch('http://localhost:4000/ticket', {
@@ -26,6 +39,10 @@ const handlePay = async() => {
     if (req.ok){
       clearTicket()
       clearTotal()
+      receiptItemsList.map(async (receiptItem) => {
+        await updateBottle(receiptItem)
+      })
+
     }  
     console.log("you have completed the transaction")
   }
