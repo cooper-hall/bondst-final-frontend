@@ -35,10 +35,10 @@ const ItemsGrid = ({receiptItemsList, setReceiptItemsList, total, setTotal, addT
           })
         }
       </div>
-      < Cocktails receiptItemsList={receiptItemsList} setReceiptItemsList={setReceiptItemsList} addToTotal={addToTotal} updateTicketList={updateTicketList}/>
+      < Cocktails receiptItemsList={receiptItemsList} setReceiptItemsList={setReceiptItemsList} addToTotal={addToTotal} updateTicketList={updateTicketList} total={total}/>
       < PaymentOptions receiptItemsList={receiptItemsList} setReceiptItemsList={setReceiptItemsList} setTotal={setTotal} total={total}/>
-      <div className="quantity-bar">QUANTITY</div>
-      < Quantities />
+      {/* <div className="quantity-bar">QUANTITY</div> */}
+      {/* < Quantities /> */}
     </div>
   )
 }
