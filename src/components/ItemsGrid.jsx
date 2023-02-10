@@ -1,11 +1,12 @@
+import {useState} from 'react'
 import AlcTypes from "./AlcTypes"
 import Cocktails from "./Cocktails"
 import PaymentOptions from "./PaymentOptions"
-import Quantities from "./Quantities"
 
 
-const ItemsGrid = ({receiptItemsList, setReceiptItemsList, total, setTotal, addToTotal, updateTicketList}) => {
+const ItemsGrid = ({receiptItemsList, setReceiptItemsList, total, setTotal, addToTotal, updateTicketList, brands, setBrands, updateTicketListCocktail}) => {
 
+  
   const categories = ["Gin", "Whiskey", "Vodka"]
 
   return (
@@ -22,7 +23,7 @@ const ItemsGrid = ({receiptItemsList, setReceiptItemsList, total, setTotal, addT
           })
         }
         </div>
-        < AlcTypes updateTicketList={updateTicketList} addToTotal={addToTotal}/>
+        < AlcTypes updateTicketList={updateTicketList} addToTotal={addToTotal} brands={brands} setBrands={setBrands}/>
         <div className="tryout">
         {
           categories.map((category)=> {
@@ -35,8 +36,8 @@ const ItemsGrid = ({receiptItemsList, setReceiptItemsList, total, setTotal, addT
           })
         }
       </div>
-      < Cocktails receiptItemsList={receiptItemsList} setReceiptItemsList={setReceiptItemsList} addToTotal={addToTotal} updateTicketList={updateTicketList} total={total}/>
-      < PaymentOptions receiptItemsList={receiptItemsList} setReceiptItemsList={setReceiptItemsList} setTotal={setTotal} total={total}/>
+      < Cocktails addToTotal={addToTotal}  updateTicketListCocktail={updateTicketListCocktail} total={total}/>
+      < PaymentOptions receiptItemsList={receiptItemsList} setReceiptItemsList={setReceiptItemsList} setTotal={setTotal} total={total} brands={brands} setBrands={setBrands}/>
     </div>
   )
 }

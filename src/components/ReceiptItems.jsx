@@ -1,4 +1,4 @@
-import {useState} from 'react'
+
 import LogOut from "./LogOut"
 
 
@@ -49,6 +49,7 @@ const ReceiptItems = ({receiptItemsList, setReceiptItemsList, setTotal, total, u
  const addQuantAndOz = (item) => {
   addQuantity(item)
   addOunce(item)
+  console.log(item)
  }
 
  const subtractQuantAndOz = (item) => {

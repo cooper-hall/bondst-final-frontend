@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 
 
-const Cocktails = ({receiptItemsList, setReceiptItemsList, addToTotal, updateTicketList, total}) => {
+const Cocktails = ({addToTotal, total, updateTicketListCocktail}) => {
   
 
   const [cocktails, setCocktails] = useState([])
@@ -18,7 +18,7 @@ const Cocktails = ({receiptItemsList, setReceiptItemsList, addToTotal, updateTic
 
 const addCocktailToOrder = (cocktail) => {
     console.log(cocktail)
-    updateTicketList(cocktail)
+    updateTicketListCocktail(cocktail)
     addToTotal(cocktail.price)
     console.log(total)
  }
