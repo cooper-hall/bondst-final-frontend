@@ -11,7 +11,7 @@ const ItemsGrid = ({receiptItemsList, setReceiptItemsList, total, setTotal, addT
 
   return (
     <div className="items-container">
-      <div className="tryout">
+      <div id="tryout2" className="tryout">
         {
           categories.map((category)=> {
             const divcolor = category === "Gin" ? "#67a9c5" : category === "Whiskey" ? "#da9930" : category === "Vodka" ? "#aed063": "#fff";
@@ -24,7 +24,7 @@ const ItemsGrid = ({receiptItemsList, setReceiptItemsList, total, setTotal, addT
         }
         </div>
         < AlcTypes updateTicketList={updateTicketList} addToTotal={addToTotal} brands={brands} setBrands={setBrands}/>
-        <div className="tryout">
+        <div id="tryout2" className="tryout">
         {
           categories.map((category)=> {
             const divcolor = category === "Gin" ? "#67a9c5" : category === "Whiskey" ? "#da9930" : category === "Vodka" ? "#aed063": "#fff";
