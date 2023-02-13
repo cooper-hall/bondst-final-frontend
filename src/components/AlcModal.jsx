@@ -4,6 +4,7 @@ const AlcModal = ({setShowAlcModal, updateTicketList, addToTotal, currentBottle,
 
     const [selectedOption, setSelectedOption] = useState(null)
     const [price, setPrice] = useState([])
+    const [noOption, setNoOption] = useState("")
 
     const updatePrice = (newOption) => {
         let bottlePrice = currentBottle.price
@@ -25,6 +26,11 @@ const AlcModal = ({setShowAlcModal, updateTicketList, addToTotal, currentBottle,
         }
     }
 
+     const removeError = () => {
+        setTimeout(() => {
+        setNoOption("")
+        },3000)
+    }
     
     const addBrandToOrder = (bottle) => {
         let updatedBottle = { ...bottle, price: price };
@@ -32,6 +38,7 @@ const AlcModal = ({setShowAlcModal, updateTicketList, addToTotal, currentBottle,
         updateTicketList(updatedBottle);
         addToTotal(price);
         setShowAlcModal(false);
+        
     };
 
    return (

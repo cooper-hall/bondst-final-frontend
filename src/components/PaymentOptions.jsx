@@ -1,5 +1,11 @@
+import {useState} from 'react'
+import CancelOrderModal from "./CancelOrderModal"
 
-const PaymentOptions = ({receiptItemsList, setReceiptItemsList, setTotal, total, bottle, brands, setBrands}) => {
+
+const PaymentOptions = ({receiptItemsList, setReceiptItemsList, setTotal, total}) => {
+
+  const [showCancelOrderModal, setShowCancelOrderModal] = useState(false)
+  // const [showCancelOrderModal, setShowCancelOrderModal] = useState(false)
 
   const clearTicket=()=>{
     setTotal(0)
@@ -47,16 +53,15 @@ const handlePay = async() => {
     console.log("you have completed the transaction")
   }
 
-const handleCancel = () => {
-    setReceiptItemsList([])
-    setTotal(0)
-    console.log("transaction cancelled")
+const cancelModal = () => {
+   setShowCancelOrderModal(true)
   }
   
   return(
     <div className="payment-container">
       <div className="pay-content" onClick={()=>{handlePay()}}>PAY</div>
-      <div className="trans-cancel-content" onClick={()=>{handleCancel()}}>CANCEL</div>
+      <div className="trans-cancel-content" onClick={()=>{cancelModal()}}>CANCEL</div>
+      {showCancelOrderModal && <CancelOrderModal  setReceiptItemsList={setReceiptItemsList} setTotal={setTotal} setShowCancelOrderModal={setShowCancelOrderModal}/> }
     </div>
   )
 }

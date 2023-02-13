@@ -67,12 +67,12 @@ const ReceiptItems = ({receiptItemsList, setReceiptItemsList, setTotal, total, u
             return(
               <>
               <li className="receipt-items-listitem">
-                <p onClick ={()=> {addQuantAndOz(item)}} className="add-quant"> + </p>
-                <p>{item.quantity}</p>
-                <p onClick ={()=> {subtractQuantAndOz(item)}} className="sub-quant"> - </p>
-                <p>{item.name}</p>
-                <p>{item.price}</p>
-                <p onClick= {() => {handleVoid(item)}} className="void-item"> X </p>
+                  <p onClick ={()=> {addQuantAndOz(item)}} className="add-quant"> + </p>
+                  <p>{item.quantity}</p>
+                  <p onClick ={()=> {subtractQuantAndOz(item)}} className="sub-quant"> - </p>             
+                  <p>{item.name}</p>
+                  <p>$ {item.price}</p>
+                  <p onClick= {() => {handleVoid(item)}}  className="void-item" > X </p>   
               </li> 
               <br/></>
             )
