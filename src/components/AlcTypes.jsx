@@ -23,13 +23,13 @@ const AlcTypes = ({addToTotal, updateTicketList, brands}) => {
           let divcolor;
             switch (true) {
     case bottle.quantity === 3 && bottle.alcType === "Gin":
-      divcolor = "#DD1C1A";
+      divcolor = "#df9a93";
       break;
     case bottle.quantity === 2 && bottle.alcType === "Gin":
       divcolor = "#EA6D5F";
       break;
     case bottle.quantity === 1 && bottle.alcType === "Gin":
-      divcolor = "#EA6D5F";
+      divcolor = "#DD1C1A";
       break;
     case bottle.quantity === 0 && bottle.alcType === "Gin":
       divcolor = "#5B5B5B";
@@ -38,7 +38,7 @@ const AlcTypes = ({addToTotal, updateTicketList, brands}) => {
       divcolor = "#76bfde";
       break;
     case bottle.quantity === 3 && bottle.alcType === "Whiskey":
-      divcolor = "#F6CA83";
+      divcolor = "#df9a93";
       break;
     case bottle.quantity === 2 && bottle.alcType === "Whiskey":
       divcolor = "#EA6D5F";
@@ -53,7 +53,7 @@ const AlcTypes = ({addToTotal, updateTicketList, brands}) => {
       divcolor = "#f5ad39";
       break;
     case bottle.quantity === 3 && bottle.alcType === "Vodka":
-      divcolor = "#ADB993";
+      divcolor = "#df9a93";
       break;
     case bottle.quantity === 2 && bottle.alcType === "Vodka":
       divcolor = "#EA6D5F";
@@ -61,7 +61,7 @@ const AlcTypes = ({addToTotal, updateTicketList, brands}) => {
     case bottle.quantity === 1 && bottle.alcType === "Vodka":
       divcolor = "#DD1C1A";
       break;
-     case bottle.quantity === 0 && bottle.alcType === "Whiskey":
+     case bottle.quantity === 0 && bottle.alcType === "Vodka":
       divcolor = "#5B5B5B";
       break; 
     case bottle.alcType === "Vodka":
