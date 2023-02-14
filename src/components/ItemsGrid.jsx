@@ -11,10 +11,11 @@ const ItemsGrid = ({receiptItemsList, setReceiptItemsList, total, setTotal, addT
 
   return (
     <div className="items-container">
-      <div id="tryout2" className="tryout">
+      <div className="parent-a">
+        <div className="tryout">
         {
           categories.map((category)=> {
-            const divcolor = category === "Gin" ? "#67a9c5" : category === "Whiskey" ? "#da9930" : category === "Vodka" ? "#aed063": "#fff";
+            const divcolor = category === "Gin" ? "#13203e" : category === "Whiskey" ? "#475971" : category === "Vodka" ? "#2a3c2b": "#fff";
             return(
               <div className="alc-category"
                   style={{backgroundColor: divcolor}}
@@ -22,22 +23,27 @@ const ItemsGrid = ({receiptItemsList, setReceiptItemsList, total, setTotal, addT
             )
           })
         }
-        </div>
+         </div>
+    
+
         < AlcTypes updateTicketList={updateTicketList} addToTotal={addToTotal} brands={brands} setBrands={setBrands}/>
-        <div id="tryout2" className="tryout">
+      
+        <div className="tryout">
         {
           categories.map((category)=> {
-            const divcolor = category === "Gin" ? "#67a9c5" : category === "Whiskey" ? "#da9930" : category === "Vodka" ? "#aed063": "#fff";
+            const divcolor = category === "Gin" ? "#13203e" : category === "Whiskey" ? "#475971" : category === "Vodka" ? "#2a3c2b": "#fff";
             return(
               <div className="alc-category"
-                  style={{backgroundColor: divcolor}}
+              style={{backgroundColor: divcolor}}
               >{category} Lookup:</div>
-            )
-          })
-        }
-      </div>
+              )
+            })
+          }
+        </div>
+      
       < Cocktails addToTotal={addToTotal}  updateTicketListCocktail={updateTicketListCocktail} total={total}/>
       < PaymentOptions receiptItemsList={receiptItemsList} setReceiptItemsList={setReceiptItemsList} setTotal={setTotal} total={total} brands={brands} setBrands={setBrands}/>
+          </div>
     </div>
   )
 }
