@@ -25,7 +25,7 @@ const addCocktailToOrder = (cocktail) => {
       <div className="all-cocktails-container">
         {
           cocktails.map((cocktail)=> {
-            const divcolor = cocktail.drinkType === "Classic" ? "#cccccc" : cocktail.drinkType === "Special" ? "#8F00FF" : cocktail.drinkType === "Other" ? "#ffff00": "#fff";
+            const divcolor = cocktail.drinkType === "Classic" ? "#6D6A75" : cocktail.drinkType === "Special" ? "#85BAA1" : cocktail.drinkType === "Other" ? "#BFD7EA": "#fff";
             return (
               <div className="all-cocktails" 
                   onClick={()=> {addCocktailToOrder(cocktail)}}

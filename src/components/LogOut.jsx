@@ -12,8 +12,9 @@ const LogOut = ({user, setUser}) => {
   }
   return(
     <div className="logout">
-      <div className="logout-btn">
-      <button onClick={logOut} >Log Out</button>
+      <div className="logout-div">
+        <img className="logout-logo" src="https://cdn.discordapp.com/attachments/1075090123001184257/1075091898487804025/bondst-low-resolution-logo-color-on-transparent-background.png"/>
+        <button className="logout-btn" onClick={logOut} >Log Out</button>
       </div>
     </div>
   )

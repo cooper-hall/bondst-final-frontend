@@ -6,7 +6,9 @@ const AlcModal = ({setShowAlcModal, updateTicketList, addToTotal, currentBottle,
     const [price, setPrice] = useState([])
     const [noOption, setNoOption] = useState("")
 
+
     const updatePrice = (newOption) => {
+        
         let bottlePrice = currentBottle.price
         switch(newOption) {
             case 'opt1':
