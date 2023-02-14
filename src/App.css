@@ -3,6 +3,7 @@ body{
   width: 100%;
   background: #e0e1dd
 }
+
 .main-page-container{
   display: flex;
   flex-direction: row;
@@ -70,7 +71,13 @@ body{
   border-radius: 8px;
   transition:0.3s
 }
-.all-brands:hover {
+.all-brands.disabled-hover:hover {
+  transform: none;
+}
+.all-brands.strike-through{
+  text-decoration:line-through;
+}
+.all-brands:hover{
   transform: scale(1.033);
 }
 
@@ -199,13 +206,14 @@ body{
   animation-fill-mode: forwards;
 }
 .alc-modal-content{
+  opacity:.97;
   position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 25%;
   max-width: 50%;
-  background-color: #fff;
+  background-color: #B6B4BB;
   border: solid 4px black;
   border-radius: 10px;
   color: #fff;
@@ -214,18 +222,25 @@ body{
 }
 
 .alc-modal-brand{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   height: auto;
   width: auto;
   padding-top: 2px;
-  font-size: 22px;
+  font-size: 3em;
   color: black
 }
 .alc-modal-option{
   color: black;
+  display: flex;
+  justify-content: space-around;
   border: 2px solid black;
   border-radius: 8px;
   padding: 2%;
+  font-size: 1.5em;
   transition: .7s
 }
 .alc-modal-option:hover {
@@ -239,9 +254,26 @@ body{
   font-size: 20px;
   padding-left: 20px;
   padding-top: 20px 
-
+}
+.bondst-logo{
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+.logo-holder{
+  height: 15%;
+  width: 100%
+}
+.login-container{
+  height: 45rem;
+  width: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .Login{
+  background: #6d6a75;
   height: 100%;
   width: 100%;
   display: flex;
@@ -252,19 +284,52 @@ body{
 .login-content{
   height: 50%;
   width: 50%;
+  background-position: center;
+  transition: background-image 1s ease-in-out 0s;
+  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 8px solid salmon;
+  border: 12px solid white;
   border-radius: 12px;
-  background: #fffaf0;
+  background: #778da9;
 }
 .login-form{
+  padding: 8%;
+  border: solid 3px white;
+  border-radius: 12px;
+  background-color:#6d6a75;
+  opacity: .9;
   display: flex;
   flex-flow: column;
   width: auto;
   height: auto
+}
+.login-header{
+  font-size: 1.5rem
+}
+.login-inputs{
+  padding: 3%;
+  border: solid 3px black;
+  border-radius: 8px
+}
+.login-btn{
+  padding: 3%;
+  border: solid 3px black;
+  border-radius: 8px;
+  transition: .5s
+}
+.login-btn:hover{
+  background: #13203e
+}
+.form-holder{
+  width: 100%;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: -10%
 }
 .logout{
   display: flex;
@@ -272,10 +337,31 @@ body{
   align-items: center;
   width: 90%;
   height: 5%;
-  border: solid 2px salmon;
+}
+.logout-logo{
+  width: 40%;
+  height: 100%;
+  display:flex;
+  align-self: center
 }
 .logout-btn{
-  
+  display: flex;
+  align-self: center;
+  padding: 2%;
+  border: solid 3px black;
+  border-radius: 8px;
+  transition: .5s
+}
+.logout-btn:hover {
+  background: #778da9
+}
+.logout-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 5%;
+  padding-bottom: 1%;
+  border-bottom: 2px solid black
 }
 
 .add-quant{

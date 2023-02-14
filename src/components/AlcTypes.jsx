@@ -32,7 +32,7 @@ const AlcTypes = ({addToTotal, updateTicketList, brands}) => {
       divcolor = "#DD1C1A";
       break;
     case bottle.quantity === 0 && bottle.alcType === "Gin":
-      divcolor = "#5B5B5B";
+      divcolor = "#5B5B5B09";
       break; 
     case bottle.alcType === "Gin":
       divcolor = "#31519b";
@@ -47,7 +47,7 @@ const AlcTypes = ({addToTotal, updateTicketList, brands}) => {
       divcolor = "#DD1C1A";
       break;
     case bottle.quantity === 0 && bottle.alcType === "Whiskey":
-      divcolor = "#5B5B5B";
+      divcolor = "#5B5B5B09";
       break; 
     case bottle.alcType === "Whiskey":
       divcolor = "#778da9";
@@ -72,7 +72,7 @@ const AlcTypes = ({addToTotal, updateTicketList, brands}) => {
       divcolor = "#fff";
                   }
             return (
-              <div className="all-brands" 
+              <div className={`all-brands ${divcolor === "#5B5B5B09" ? "disabled-hover": ""}`}
               onClick={()=> {handleClick(bottle)}}
               style={{backgroundColor: divcolor}}
               >
