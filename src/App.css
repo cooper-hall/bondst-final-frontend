@@ -149,7 +149,7 @@ body{
   width: -webkit-fill-available;
   align-items: center;
   justify-content: space-between;
-  max-height: 82%;
+  max-height: 80%;
   overflow-y: scroll;
 }
 .receipt-item-container::-webkit-scrollbar {
@@ -278,6 +278,19 @@ body{
   padding-left: 20px;
   padding-top: 20px 
 }
+.alc-category-lookup{
+  display: grid;
+  flex-direction: row;
+  border: solid 3px black;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-size: 1.5em;
+  color: white;
+  align-items: center;
+  border-radius: 8px
+}
+
 .bondst-logo{
   width: 100%;
   height: 100%;
@@ -509,13 +522,70 @@ body{
     position: absolute;
     display: flex;
     align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 3%;
     background-color: #fff;
     border: solid 4px black;
     font-size: 3.5em;
     border-radius: 10px;
     color: black;
-    padding: 12%
+    padding: 12%;
+    overflow: auto
 }
+.alc-lookup-container{
+  display: flex;
+  background-color: rgba(1,1,1,.5);
+  position: fixed;
+  z-index: 1;
+  align-items: center;
+  justify-content:center;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right:0;
+  left:0;
+  bottom:0;
+  animation: grow .5s;
+  animation-fill-mode: forwards
+}
+.alc-lookup-content{
+  opacity: .97;
+  position: absolute;
+  /* display: flex;
+  flex-flow: row;
+  align-items:center;
+  justify-content: space-around; */
+  width: 75%;
+  background-color: #B6B4BB;
+  border: solid 5px black;
+  border-radius: 10px;
+  color: #fff;
+  height: 75%;
+}
+.lookup-items{
+  border: 4px solid black;
+  border-radius: 8px;
+  padding: 2%;
+  background-color: brown;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 10%;
+  max-width: 20%;
+  max-height: 10%;
+  min-height: 10%;
+  cursor: pointer;
+  display: flex;
+  padding: 4%;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: row;
+  flex-flow: wrap;
+}
+
+
 @keyframes grow {
     0% {
         transform: scale(0);
