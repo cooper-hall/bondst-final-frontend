@@ -7,12 +7,13 @@
 // onSubmit of that, the selected option should be added to the receipt list and close out all the modals
 
 import {useState, useEffect} from 'react'
-import AlcModal from "./AlcModal"
+import BottlePurchase from "./BottlePurchase"
 
 
-const AlcTypeLookUp = ({selectedCategory}) => {
+const AlcTypeLookUp = ({selectedCategory, setSelectedCategory, addToTotal, updateTicketList, setShowAlcTypeLookUp}) => {
 
   const [typeBottles, setTypeBottles] = useState([])
+  const [showBottlePurchase, setShowBottlePurchase] = useState(false)
 
   useEffect(() => {
     const request = async () => {
@@ -23,24 +24,34 @@ const AlcTypeLookUp = ({selectedCategory}) => {
     request()
   }, [])
 
+  const handleClick = (type) => {
+    console.log("ive been clicked")
+    // setShowAlcTypeLookUp(false)
+    setSelectedCategory(type)
+    setShowBottlePurchase(true)
+    console.log(selectedCategory)
+  }
+
   return(
 
     <div className="alc-lookup-container">
       <div className="alc-lookup-content">
         <div className="lookup-cont">
-          <div className="exit-button" onClick={() => setShowAlcModal(false)}>X</div>
+          <div className="exit-button" onClick={()=> setShowAlcTypeLookUp(false)}>X</div>
           <div className="lookup-list">
           {
             typeBottles.map((bottle)=> {
               return(
-                <div className="lookup-items">{bottle.name}</div>
+                <div className="lookup-items" onClick={()=>handleClick(bottle)}>{bottle.name}</div>
               )
             })
           }
           </div>
         </div>
       </div>
+      {showBottlePurchase && <BottlePurchase setShowBottlePurchase={setShowBottlePurchase} addToTotal={addToTotal} updateTicketList={updateTicketList} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} setShowAlcTypeLookUp={setShowAlcTypeLookUp}/> }
     </div>
+
   )
 }
 

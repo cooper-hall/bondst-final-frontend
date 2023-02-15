@@ -30,7 +30,7 @@ const LookUpCats = ({addToTotal, updateTicketList}) => {
             )
           })
         }
-        {showAlcTypeLookUp && <AlcTypeLookUp selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} addToTotal={addToTotal} updateTicketList={updateTicketList}/> }
+        {showAlcTypeLookUp && <AlcTypeLookUp selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} addToTotal={addToTotal} updateTicketList={updateTicketList} setShowAlcTypeLookUp={setShowAlcTypeLookUp}/> }
     </div>
   )
 }
