@@ -5,7 +5,7 @@ const LookUpCats = ({addToTotal, updateTicketList}) => {
   const [showAlcTypeLookUp, setShowAlcTypeLookUp] = useState(false)
   const [selectedCategory, setSelectedCategory] = useState([])
 
-  const categories = ["Gin", "Whiskey", "Vodka"]
+  const categories = ["Gin", "Whiskey", "Vodka", "Tequila"]
 
 
   const handleClick = (type) => {
@@ -21,10 +21,10 @@ const LookUpCats = ({addToTotal, updateTicketList}) => {
     <div className="tryout">
         {
           categories.map((category)=> {
-            const divcolor = category === "Gin" ? "#13203e" : category === "Whiskey" ? "#475971" : category === "Vodka" ? "#2a3c2b": "#fff";
+            const divcolor = category === "Gin" ? "#13203e" : category === "Whiskey" ? "#475971" : category === "Vodka" ? "#2a3c2b":  category === "Tequila" ? "#58897d" : "#fff";
             return(
               <div className="alc-category"
-                  style={{backgroundColor: divcolor}}
+                  style={{backgroundColor: divcolor, cursor: "pointer"}}
                   onClick={()=> handleClick(category)}
               >{category} Lookup: </div>
             )

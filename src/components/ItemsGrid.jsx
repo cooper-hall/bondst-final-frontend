@@ -7,7 +7,7 @@ import LookUpCats from "./LookUpCats"
 
 const ItemsGrid = ({receiptItemsList, setReceiptItemsList, total, setTotal, addToTotal, updateTicketList, brands, setBrands, updateTicketListCocktail}) => {
   
-  const categories = ["Gin", "Whiskey", "Vodka"]
+  const categories = ["Gin", "Whiskey", "Vodka", "Tequila"]
 
   return (
     <div className="items-container">
@@ -15,7 +15,7 @@ const ItemsGrid = ({receiptItemsList, setReceiptItemsList, total, setTotal, addT
         <div className="tryout">
         {
           categories.map((category)=> {
-            const divcolor = category === "Gin" ? "#13203e" : category === "Whiskey" ? "#475971" : category === "Vodka" ? "#2a3c2b": "#fff";
+            const divcolor = category === "Gin" ? "#13203e" : category === "Whiskey" ? "#475971" : category === "Vodka" ? "#2a3c2b": category === "Tequila" ? "#58897d" : "#fff";
             return(
               <div className="alc-category"
                   style={{backgroundColor: divcolor}}
