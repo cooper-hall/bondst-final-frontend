@@ -19,7 +19,7 @@ const AlcTypes = ({addToTotal, updateTicketList, brands}) => {
   return (
       <div className="all-brands-container">
         {
-          brands.map((bottle)=> {     
+          brands.slice(0, 16).map((bottle)=> {     
           let divcolor;
             switch (true) {
     case bottle.quantity === 3 && bottle.alcType === "Gin":
@@ -63,10 +63,24 @@ const AlcTypes = ({addToTotal, updateTicketList, brands}) => {
       break;
      case bottle.quantity === 0 && bottle.alcType === "Vodka":
       divcolor = "#5B5B5B09";
-      //if divcolor = "#5B5B5B05" then disable onhover
       break; 
     case bottle.alcType === "Vodka":
       divcolor = "#415d43";
+      break;
+    case bottle.quantity === 3 && bottle.alcType === "Tequila":
+      divcolor = "#df9a93";
+      break;
+    case bottle.quantity === 2 && bottle.alcType === "Tequila":
+      divcolor = "#EA6D5F";
+      break;
+    case bottle.quantity === 1 && bottle.alcType === "Tequila":
+      divcolor = "#DD1C1A";
+      break;
+    case bottle.quantity === 0 && bottle.alcType === "Tequila":
+      divcolor = "#5B5B5B09";
+      break; 
+    case bottle.alcType === "Tequila":
+      divcolor = "#83afa4";
       break;
     default:
       divcolor = "#fff";
