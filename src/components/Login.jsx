@@ -23,7 +23,7 @@ function Login({user, setUser}) {
   useEffect(()=> {
     const intervalPic = setInterval(() => {
       setCurrentPic ((currentPic + 1) % images.length)
-    }, 8000)
+    }, 5000)
     return () => clearInterval(intervalPic)
   }, [currentPic, images.length])
 
