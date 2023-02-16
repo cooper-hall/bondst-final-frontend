@@ -8,7 +8,7 @@ const CancelOrderModal = ({setReceiptItemsList, setTotal, setShowCancelOrderModa
     setTimeout(() => {
       setCompleted("")
       setShowCancelOrderModal(false)
-    }, 2000)
+    }, 750)
   }
 
   const handleCancel = () => {
