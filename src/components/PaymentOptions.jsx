@@ -19,7 +19,7 @@ const PaymentOptions = ({receiptItemsList, setReceiptItemsList, setTotal, total}
   const removeModal=() =>{
     setTimeout(()=> {
       setShowConfirmPay(false)
-    }, 3000)
+    }, 2000)
   }
 
 const updateBottle = async(receiptItem) => {

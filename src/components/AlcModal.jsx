@@ -44,7 +44,7 @@ const AlcModal = ({setShowAlcModal, updateTicketList, addToTotal, currentBottle,
                     <div className="modal-options-div">
                         <h4 className={`alc-modal-option ${selectedOption === 'opt1' ? 'selected' : ''}`} onClick={()=> updatePrice('opt1')} style={{backgroundColor: '#bfd7b5'}}> + house cocktail </h4>
                         <h4 className={`alc-modal-option ${selectedOption === 'opt2' ? 'selected' : ''}`} onClick={()=> updatePrice('opt2')} style={{backgroundColor: '#6d6a75'}}> + classic cocktail </h4>
-                        <h4 className={`alc-modal-option ${selectedOption === 'opt3' ? 'selected' : ''}`} onClick={()=> updatePrice('opt3')} style={{backgroundColor: '#bfd7ea'}}> + other drink </h4>
+                        <h4 className={`alc-modal-option ${selectedOption === 'opt3' ? 'selected' : ''}`} onClick={()=> updatePrice('opt3')} style={{backgroundColor: '#bfd7ea'}}> + other </h4>
                         <h4 className={`alc-modal-option ${selectedOption === 'opt4' ? 'selected' : ''}`} onClick={()=> updatePrice('opt4')} style={{backgroundColor: '#fff'}}> + straight </h4>
                         <h2 className="alc-modal-option" onClick={()=>{addBrandToOrder(currentBottle)}}>submit</h2>
                     </div>
