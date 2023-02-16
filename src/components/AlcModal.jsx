@@ -38,13 +38,17 @@ const AlcModal = ({setShowAlcModal, updateTicketList, addToTotal, currentBottle,
    return (
         <div className="alc-modal-container" > 
             <div className="alc-modal-content">
-                <div className="exit-button" onClick={() => setShowAlcModal(false)}>X</div>
-                <div className="alc-modal-brand"> How to serve: {currentBottle.name} ${price}</div>
-                    <h4 className={`alc-modal-option ${selectedOption === 'opt1' ? 'selected' : ''}`} onClick={()=> updatePrice('opt1')}> + house cocktail </h4>
-                    <h4 className={`alc-modal-option ${selectedOption === 'opt2' ? 'selected' : ''}`} onClick={()=> updatePrice('opt2')}> + classic cocktail </h4>
-                    <h4 className={`alc-modal-option ${selectedOption === 'opt3' ? 'selected' : ''}`} onClick={()=> updatePrice('opt3')}> + other drink </h4>
-                    <h4 className={`alc-modal-option ${selectedOption === 'opt4' ? 'selected' : ''}`} onClick={()=> updatePrice('opt4')}> + straight </h4>
-                    <h4 className="alc-modal-option" onClick={()=>{addBrandToOrder(currentBottle)}}>submit</h4>
+                <div style={{width:"100%", height: "100%"}}>
+                    <div className="exit-button" onClick={() => setShowAlcModal(false)}>X</div>
+                    <div className="alc-modal-brand"> How to serve: {currentBottle.name} ${price}</div>
+                    <div className="modal-options-div">
+                        <h4 className={`alc-modal-option ${selectedOption === 'opt1' ? 'selected' : ''}`} onClick={()=> updatePrice('opt1')} style={{backgroundColor: '#bfd7b5'}}> + house cocktail </h4>
+                        <h4 className={`alc-modal-option ${selectedOption === 'opt2' ? 'selected' : ''}`} onClick={()=> updatePrice('opt2')} style={{backgroundColor: '#6d6a75'}}> + classic cocktail </h4>
+                        <h4 className={`alc-modal-option ${selectedOption === 'opt3' ? 'selected' : ''}`} onClick={()=> updatePrice('opt3')} style={{backgroundColor: '#bfd7ea'}}> + other drink </h4>
+                        <h4 className={`alc-modal-option ${selectedOption === 'opt4' ? 'selected' : ''}`} onClick={()=> updatePrice('opt4')} style={{backgroundColor: '#fff'}}> + straight </h4>
+                        <h2 className="alc-modal-option" onClick={()=>{addBrandToOrder(currentBottle)}}>submit</h2>
+                    </div>
+                </div>
             </div>
         </div>
     )
