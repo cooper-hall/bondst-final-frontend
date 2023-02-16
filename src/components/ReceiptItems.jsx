@@ -66,22 +66,22 @@ const ReceiptItems = ({receiptItemsList, setReceiptItemsList, setTotal, total, u
           receiptItemsList && receiptItemsList.map((item)=> {
             return(
               <>
-              <li className="receipt-items-listitem">
+              <div className="receipt-items-listitem">
                 <div className="group1">
                   <p onClick ={()=> {addQuantAndOz(item)}} className="add-quant"> + </p>
-                  <p>{item.quantity}</p>
+                  <p style={{fontSize:"1.5em"}}>{item.quantity}</p>
                   <p onClick ={()=> {subtractQuantAndOz(item)}} className="sub-quant"> - </p>
                 </div>
                 <div className="group2">            
-                  <p>{item.name}</p>
+                  <p style={{fontSize:"1.5em", textAlign: "center"}}>{item.name}</p>
                 </div>
                 <div className="group3">
-                  <p>$ {item.price}</p>
+                  <p style={{fontSize:"1.1em"}}>$ {item.price}</p>
                 </div>  
                 <div className="group1">
-                  <p onClick= {() => {handleVoid(item)}}  className="void-item" > X </p> 
+                  <p onClick= {() => {handleVoid(item)}}  className="void-item" style={{fontSize:"1.4em"}}> X </p> 
                 </div>   
-              </li> 
+              </div> 
               <br/></>
             )
           })
