@@ -15,6 +15,7 @@ function App() {
     <div className="main-page-container">
       <Routes>
         <Route path="/" element={<Login user={user} setUser={setUser} form={form}/>} />
+        {/* <Route path="/admin" element={<Admin/>} */}
         <Route path="/mainpage" element={<MainPage user={user} setUser={setUser}/>} />
       </Routes>
     </div>
