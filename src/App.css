@@ -611,6 +611,15 @@ body{
 .lookup-items:hover {
   transform: scale(1.3)
 }
+.restock-items{
+  border: solid 2px black;
+  width: 60rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly
+  
+}
 
 
 @keyframes grow {
