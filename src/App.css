@@ -618,7 +618,53 @@ body{
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly
-  
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 4rem;
+  width: 100%;
+  background-color: gray;
+  font-size: 20px;
+  padding: .5rem;
+  /* border-bottom: solid 2px #512981; */
+}
+
+.logo-image {
+  height: 80px;
+}
+
+.logo-title {
+  width: fit-content;
+}
+
+#logo {
+  color: #3891A6;
+}
+
+.link-container {
+  display: flex;
+  width: 400px;
+  justify-content: space-evenly;
+}
+
+.link-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  padding: 7px;
+  border: solid 2px transparent;
+  height: 20px;
+  width: 120px;
+  cursor: pointer;
+}
+
+.link-text:hover {
+  color: #3891A6;
 }
 
 

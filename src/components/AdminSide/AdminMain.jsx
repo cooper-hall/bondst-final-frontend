@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+import AdminHeader from '../AdminSide/AdminHeader'
 
 const AdminMain = () => {
 
@@ -15,9 +16,14 @@ const AdminMain = () => {
 
 
 return(
+  <div className="whole-page">
+    <div className="header">
+      <AdminHeader />
+    </div>
   <div className="admin-mp-container">
     <div className="admin-mp-container">
       <div className="restock-container">
+        <h2>Restock List:</h2>
         {bottles.filter(bottle => bottle.quantity < 4).map(filteredBottle => {
              let divcolor;
             switch (true) {
@@ -60,6 +66,7 @@ return(
         })}
       </div>
     </div>
+  </div>
   </div>
 )
 }
