@@ -626,18 +626,18 @@ body{
   justify-content: space-between;
   min-height: 4rem;
   width: 100%;
-  background-color: gray;
+  background-color: rgb(152, 151, 151);
   font-size: 20px;
   padding: .5rem;
   /* border-bottom: solid 2px #512981; */
 }
 
 .logo-image {
-  height: 80px;
+  height: 4rem;
 }
 
 .logo-title {
-  width: fit-content;
+  width: fit-cotent;
 }
 
 #logo {
@@ -646,7 +646,7 @@ body{
 
 .link-container {
   display: flex;
-  width: 400px;
+  width: 80%;
   justify-content: space-evenly;
 }
 
@@ -656,15 +656,13 @@ body{
   justify-content: center;
   text-decoration: none;
   color: #fff;
-  padding: 7px;
+  padding: 8px;
   border: solid 2px transparent;
-  height: 20px;
-  width: 120px;
   cursor: pointer;
+  font-size: 1.5rem
 }
-
 .link-text:hover {
-  color: #3891A6;
+  color: #415a77;
 }
 
 
