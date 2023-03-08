@@ -54,7 +54,7 @@ const AlcTypes = ({addToTotal, updateTicketList, brands}) => {
               onClick={()=> {handleClick(bottle)}}
               style={{backgroundColor: divcolor}}
               >
-                {bottle.name} 
+                {bottle.name}({bottle.quantity})
               </div>
             )
           })

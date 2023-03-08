@@ -67,7 +67,7 @@ const AlcTypeLookUp = ({selectedCategory, setSelectedCategory, addToTotal, updat
                 <div className={`lookup-items ${divcolor === "#5B5B5B09" ? "disabled-hover": ""}`}
                 onClick={()=>handleClick(bottle)}
                 style={{backgroundColor: divcolor}}
-                >{bottle.name}</div>
+                >{bottle.name}({bottle.quantity})</div>
               )
             })
           }

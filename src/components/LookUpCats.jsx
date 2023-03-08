@@ -15,8 +15,6 @@ const LookUpCats = ({addToTotal, updateTicketList}) => {
     console.log(selectedCategory)
   }
 
-
-
   return (
     <div className="tryout">
         {
