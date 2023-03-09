@@ -710,9 +710,30 @@ body{
   margin: .25rem;
   color: white
 }
-
-
 /* end Admin Inv CSS */
+
+/* employee CSS */
+.new-employee{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2%;
+  border-bottom: solid black 2px
+}
+.employee-list{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding:1%
+}
+.indv-employee{
+  border: solid black 2px;
+  padding: 1%
+
+}
+
+/* end employee CSS */
 
 
 @keyframes grow {
