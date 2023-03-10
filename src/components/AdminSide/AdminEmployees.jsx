@@ -1,9 +1,11 @@
 import {useState, useEffect} from 'react'
 import AdminHeader from '../AdminSide/AdminHeader'
+import NewEmployeeModal from '../AdminSide/NewEmployeeModal'
 
 const AdminEmployees = () => {
 
   const [employees, setEmployees] = useState([])
+  const [showModal, setShowModal] = useState(false)
 
   useEffect(() => {
     const request = async () => {
@@ -14,6 +16,9 @@ const AdminEmployees = () => {
     request()
   }, [])
 
+  const onHandle = () => {
+    setShowModal(true)
+  }
 
   return(
      <div className="whole-page">
@@ -21,7 +26,7 @@ const AdminEmployees = () => {
         <AdminHeader />
       </div>
       <div className="employee-container">
-        <div className="new-employee"> +new employee</div>
+        <div className="new-employee" onClick={onHandle}> +new employee </div>
         <div className="employee-list"> 
           {employees.map((employee)=>{
             return(
@@ -30,6 +35,7 @@ const AdminEmployees = () => {
           })}
         </div>
       </div>
+      {showModal && <NewEmployeeModal setShowModal={setShowModal}/>}
     </div>
   )
 
