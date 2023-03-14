@@ -39,16 +39,16 @@ const NewEmployeeModal = ({setShowModal}) => {
   return (
     <div className="alc-lookup-container">
       <div className="alc-lookup-content">
-        <div className="">
-            <h2>New Employee:</h2>
-            <form onSubmit={(e) => { handleSubmit(e) }}>
-               <input className="" onChange={(e) => { setFirstName(e.target.value) }} type="text" placeholder="FIRST NAME" /><br />
-               <input className="" onChange={(e) => { setLastName(e.target.value) }} type="text" placeholder="LAST NAME" /><br />
-               <input className="" onChange={(e) => { setUserName(e.target.value) }} type="text" placeholder="USERNAME" /><br />
-               <input className="" onChange={(e) => { setEmail(e.target.value) }} type="email" placeholder="EMAIL" /><br />
-               <input className="" onChange={(e) => { setPassword(e.target.value) }} type="password" placeholder="PASSWORD" /><br />
-               <input className="" onChange={(e) => { setPhone(e.target.value) }} type="tel" placeholder="tel: 000-000-0000" /><br />
-               <input className="" onChange={(e) => { setAddress(e.target.value) }} type="text" placeholder='Address' /><br />
+        <div className="new-employee-container">
+            <h2 className="" >New Employee:</h2>
+            <form className="employee-form" onSubmit={(e) => { handleSubmit(e) }}>
+               <input className="employee-input" onChange={(e) => { setFirstName(e.target.value) }} type="text" placeholder="FIRST NAME" />
+               <input className="employee-input" onChange={(e) => { setLastName(e.target.value) }} type="text" placeholder="LAST NAME" />             
+               <input className="employee-input" onChange={(e) => { setUserName(e.target.value) }} type="text" placeholder="USERNAME" />
+               <input className="employee-input" onChange={(e) => { setEmail(e.target.value) }} type="email" placeholder="EMAIL" />
+               <input className="employee-input" onChange={(e) => { setPassword(e.target.value) }} type="password" placeholder="PASSWORD" />
+               <input className="employee-input" onChange={(e) => { setPhone(e.target.value) }} type="tel" placeholder="tel: 000-000-0000" />
+               <input className="employee-input" onChange={(e) => { setAddress(e.target.value) }} type="text" placeholder='Address' />
                <input className="" type="submit" />
             </form>
         </div>
