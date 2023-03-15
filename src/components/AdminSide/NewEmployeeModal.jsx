@@ -9,6 +9,7 @@ const NewEmployeeModal = ({setShowModal}) => {
   const [password, setPassword] = useState("")
   const [phone, setPhone] = useState("")
   const [address, setAddress] = useState("")
+  const [admin, setAdmin] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -16,21 +17,24 @@ const NewEmployeeModal = ({setShowModal}) => {
     const newEmployee = {
             first_name: firstName,
             last_name: lastName,
-            user_name: user_name,
+            user_name: userName,
             email: email,
             password: password,
             address: address,
-            phone_number: phone
+            phone_number: phone,
+            admin: admin
         }
     
     const postEmployee = async () => {
-            let req = await fetch('http://localhost:3000/employees', {
+            let req = await fetch('http://localhost:3000/new_employee', {
                 method: 'POST',
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
                 },
                 body: JSON.stringify(newEmployee),
             })
+            let res = await req.json()
         }
         postEmployee()
         setShowModal(false)
@@ -49,6 +53,7 @@ const NewEmployeeModal = ({setShowModal}) => {
                <input className="employee-input" onChange={(e) => { setPassword(e.target.value) }} type="password" placeholder="PASSWORD" />
                <input className="employee-input" onChange={(e) => { setPhone(e.target.value) }} type="tel" placeholder="tel: 000-000-0000" />
                <input className="employee-input" onChange={(e) => { setAddress(e.target.value) }} type="text" placeholder='Address' />
+               <input className="employee-input" checked={admin} onChange={e => setAdmin(e.target.checked)} type="checkbox" placeholder='Admin' />
                <input className="" type="submit" />
             </form>
         </div>
