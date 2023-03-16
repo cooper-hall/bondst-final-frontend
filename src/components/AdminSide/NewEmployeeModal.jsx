@@ -21,7 +21,7 @@ const NewEmployeeModal = ({setShowModal}) => {
             email: email,
             password: password,
             address: address,
-            phone_number: phone,
+            phone: phone,
             admin: admin
         }
     
@@ -44,6 +44,7 @@ const NewEmployeeModal = ({setShowModal}) => {
     <div className="alc-lookup-container">
       <div className="alc-lookup-content">
         <div className="new-employee-container">
+            <h3 className="exit-button" onClick={()=> setShowModal(false)}>X</h3>
             <h2 className="" >New Employee:</h2>
             <form className="employee-form" onSubmit={(e) => { handleSubmit(e) }}>
                <input className="employee-input" onChange={(e) => { setFirstName(e.target.value) }} type="text" placeholder="FIRST NAME" />
