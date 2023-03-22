@@ -15,22 +15,21 @@ const NewEmployeeModal = ({setShowModal}) => {
     e.preventDefault()
  
     const newEmployee = {
+            username: userName,
+            password: password,
             first_name: firstName,
             last_name: lastName,
-            user_name: userName,
             email: email,
-            password: password,
-            address: address,
             phone: phone,
+            address: address,
             admin: admin
         }
     
     const postEmployee = async () => {
-            let req = await fetch('http://localhost:3000/new_employee', {
+            let req = await fetch('http://localhost:4000/new_employee', {
                 method: 'POST',
                 headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json"
+                    "Content-Type": "application/json"
                 },
                 body: JSON.stringify(newEmployee),
             })
@@ -54,7 +53,11 @@ const NewEmployeeModal = ({setShowModal}) => {
                <input className="employee-input" onChange={(e) => { setPassword(e.target.value) }} type="password" placeholder="PASSWORD" />
                <input className="employee-input" onChange={(e) => { setPhone(e.target.value) }} type="tel" placeholder="tel: 000-000-0000" />
                <input className="employee-input" onChange={(e) => { setAddress(e.target.value) }} type="text" placeholder='Address' />
-               <input className="employee-input" checked={admin} onChange={e => setAdmin(e.target.checked)} type="checkbox" placeholder='Admin' />
+               <select className="employee-input" value={admin} onChange={e => setAdmin(e.target.value)}> Admin?
+                  <option value="True">True</option>
+                  <option value="False">False</option>
+               </select>
+               {/* <input className="employee-input" checked={admin} onChange={e => setAdmin(e.target.checked)} type="checkbox" placeholder='Admin' /> */}
                <input className="" type="submit" />
             </form>
         </div>
