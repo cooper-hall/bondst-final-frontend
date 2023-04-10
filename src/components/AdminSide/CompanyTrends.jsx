@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import AdminHeader from '../AdminSide/AdminHeader'
 
+//need to import ReCharts 
 
 const CompanyTrends = () => {
   return(
@@ -9,6 +10,7 @@ const CompanyTrends = () => {
         <AdminHeader />
       </div>
       <div> TRENDS </div>
+
     </div>
   )
 

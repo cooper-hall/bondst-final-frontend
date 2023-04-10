@@ -30,20 +30,20 @@ const AdminInventory = () => {
           {bottles.map((bottle)=> {
              let divcolor;
             switch (true) {
-    case bottle.alcType === "Gin":
-      divcolor = "#31519b";
-      break;
-    case bottle.alcType === "Whiskey":
-      divcolor = "#778da9";
-      break;
-    case bottle.alcType === "Vodka":
-      divcolor = "#415d43";
-      break;
-    case bottle.alcType === "Tequila":
-      divcolor = "#83afa4";
-      break;
-    default:
-      divcolor = "#fff";}
+                case bottle.alcType === "Gin":
+                  divcolor = "#31519b";
+                  break;
+                case bottle.alcType === "Whiskey":
+                  divcolor = "#778da9";
+                  break;
+                case bottle.alcType === "Vodka":
+                  divcolor = "#415d43";
+                  break;
+                case bottle.alcType === "Tequila":
+                  divcolor = "#83afa4";
+                  break;
+                default:
+                  divcolor = "#fff";}
             return(
               <div className="inv-btl" style={{backgroundColor: divcolor}}> {bottle.name} : ({bottle.quantity})</div>
             )
