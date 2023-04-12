@@ -53,11 +53,12 @@ const NewEmployeeModal = ({setShowModal}) => {
                <input className="employee-input" onChange={(e) => { setPassword(e.target.value) }} type="password" placeholder="PASSWORD" />
                <input className="employee-input" onChange={(e) => { setPhone(e.target.value) }} type="tel" placeholder="tel: 000-000-0000" />
                <input className="employee-input" onChange={(e) => { setAddress(e.target.value) }} type="text" placeholder='Address' />
-               <select className="employee-input" value={admin} onChange={e => setAdmin(e.target.value)}> Admin?
+               <div> Admin?
+               <select className="employee-input" value={admin} onChange={e => setAdmin(e.target.value)}>
                   <option value="True">True</option>
                   <option value="False">False</option>
                </select>
-               {/* <input className="employee-input" checked={admin} onChange={e => setAdmin(e.target.checked)} type="checkbox" placeholder='Admin' /> */}
+               </div>
                <input className="" type="submit" />
             </form>
         </div>
