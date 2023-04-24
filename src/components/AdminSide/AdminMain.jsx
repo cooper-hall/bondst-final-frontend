@@ -55,7 +55,7 @@ return(
                 divcolor = "#fff";}
           return(
           <>
-            {/* <h2 className="restock-header"> Restock List </h2> */}
+            <h2 className="restock-header"> Restock List </h2>
               <div className="restock-items" style={{backgroundColor: divcolor}}>
                 <div clan>{filteredBottle.name}</div> <br/>
                 <div>Q: {filteredBottle.quantity}</div>
